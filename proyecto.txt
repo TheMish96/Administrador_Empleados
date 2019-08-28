@@ -1,0 +1,35 @@
+create database ing;
+
+use ing;
+
+ create table empleado(
+ id_empleado int primary key auto_increment,
+ nombres varchar (40),
+ apellidoh varchar (20),
+ apellidom varchar (20),
+ puesto varchar (20),
+paga_hora int(4));
+
+create table calculo (
+total_horas int(3),
+total_salario float,
+id_cal int,
+foreign key( id_cal) references empleado (id_empleado));
+
+create table entrada(
+ id_entrada int,
+ horaI int,
+ minutoI int,
+dia varchar(30),
+foreign key (id_entrada)references empleado(id_empleado));
+
+create table salida(
+id_salida int,
+horaF int,
+minutoF int,
+dia varchar(30),
+foreign key (id_salida)references empleado(id_empleado) );
+
+
+
+
